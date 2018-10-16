@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
-<html lang="en-US" dir="ltr">
+<html lang="bn-BD" dir="ltr">
 <head profile="http://www.w3.org/2005/10/profile">
 <meta charset='utf-8'>
 <meta name="description" content="Rufus: Create bootable USB drives the easy way">
 <meta name="keywords" content="Application,BIOS,Boot,Bootable,DOS,Download,Drive,Fast,Flash,Formatting,FreeDOS,Linux,Portable,Rufus,Small,Standlone,UEFI,USB,Utility,Windows">
 <meta name="author" content="Pete Batard">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rufus - Create bootable USB drives the easy way</title>
+<title>Rufus - সহজভাবে বুটেবল USB ড্রাইভ তৈরি করুন</title>
 <script type="text/javascript">
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -97,7 +97,7 @@
 <body>
 <div id="right_column">
 <label for="lang_select">Change language:</label><select name="lang_select" id="lang_select" onchange="self.location='index-'+this.options[this.selectedIndex].value+'.html'">
-  <option dir="ltr" selected="selected" value="en_US">
+  <option dir="ltr"  value="en_US">
   English (International)</option>
   <option dir="ltr"  value="sq_AL">
   Albanian (Shqip)</option>
@@ -107,7 +107,7 @@
   Armenian (Հայերեն)</option>
   <option dir="ltr"  value="az_AZ">
   Azerbaijani (Azərbaycan)</option>
-  <option dir="ltr"  value="bn_BD">
+  <option dir="ltr" selected="selected" value="bn_BD">
   Bangla (বাংলা)</option>
   <option dir="ltr"  value="bs_BA">
   Bosnian (Bosánski)</option>
@@ -161,6 +161,8 @@
   Malay (Bahasa Malaysia)</option>
   <option dir="ltr"  value="nb_NO">
   Norwegian (Norsk)</option>
+  <option dir="ltr"  value="or_IN">
+  Odia (ଓଡ଼ିଆ)</option>
   <option dir="ltr"  value="fa_IR">
   Persian (فارسی)</option>
   <option dir="ltr"  value="pl_PL">
@@ -193,7 +195,7 @@
   Vietnamese (Tiếng Việt)</option>
 </select>
 <div class="hide_on_small_screens">
-<a href="https://github.com/pbatard/rufus/wiki/Localization#wiki-Translating_the_Rufus_Homepage">Want your language here?</a>&nbsp;<br />
+<a href="https://github.com/pbatard/rufus/wiki/Localization#wiki-Editing_an_existing_homepage_translation">এই অনুবাদের উন্নতি করতে চান?</a>&nbsp;<br />
 &nbsp;<br />
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Rufus -->
@@ -221,28 +223,26 @@
 	<h1><img border="0" src="pics/rufus-128.png" srcset="pics/rufus-128.png 1x, pics/rufus-256.png 2x" alt="[rufus icon]"/>
 	<a href="https://github.com/pbatard/rufus">Rufus</a></h1>
 	<div class="tagline">
-		Create bootable USB drives the easy way	</div>
-		<img border="0" src="pics/rufus_en.png" srcset="pics/rufus_en.png 1x, pics/rufus_en_2x.png 2x" alt="[rufus screenshot]"/>		<p>Rufus is a utility that helps format and create bootable USB flash drives, such as USB keys/pendrives, memory sticks, etc.</p>
-		<p>It can be especially useful for cases where:			<ul>
-				<li>you need to create USB installation media from bootable ISOs (Windows, Linux, UEFI, etc.)</li>
-				<li>you need to work on a system that doesn't have an OS installed</li>
-				<li>you need to flash a BIOS or other firmware from DOS</li>
-				<li>you want to run a low-level utility</li>
+		সহজভাবে বুটেবল USB ড্রাইভ তৈরি করুন	</div>
+		<img border="0" src="pics/rufus_en.png" srcset="pics/rufus_en.png 1x, pics/rufus_en_2x.png 2x" alt="[rufus screenshot]"/>		<p>Rufus এমন একটি প্রোগ্রাম যেটা আপনাকে USB ফ্লাশ ড্রাইভ কে মুছতে ও বুটেবল USB ফ্লাশ ড্রাইভ তৈরি করতে সাহায্য করে। যেমন, পেনড্রাইভ, মেমোরি স্টিক ইত্যাদি।</p>
+		<p>বিশেষভাবে এটা উপকারী হতে পারে:			<ul>
+				<li>বুটেবল ISO (উইন্ডোজ, লিনাক্স, UEFI ইত্যদি) থেকে আপনাকে বুটেবল USB সংস্থাপন মিডিয়া তৈরি করতে হবে।</li>
+				<li>আপনাকে ওই সিস্টেমে কাজ করতে হবে যেটতে OS সংস্থাপন করা নেই।</li>
+				<li>DOS থেকে BIOS বা অন্য ফার্মওয়ার ফ্লাশ করতে হবে।</li>
+				<li>আপনি নিন্ম সীমার ইউটিলিটি চালাতে চাচ্ছেন</li>
 			</ul>
 		</p>
-		<p>Despite its small size, Rufus provides everything you need!</p>
-		<p>Oh, and Rufus is <b>fast</b>. For instance it's about twice as fast as <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>, <a href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3">Universal USB Installer</a> or <a href="https://www.microsoft.com/en-us/download/windows-usb-dvd-download-tool">Windows 7 USB download tool</a>, on the creation of a Windows 7 USB installation drive from an ISO. It is also marginally faster on the creation of Linux bootable USB from ISOs. <a href="#ref1"><sup>(1)</sup></a><br/>
-		A non exhaustive list of Rufus supported ISOs is also provided at the bottom of this page. <a href="#ref2"><sup>(2)</sup></a></p>
-		<a name="download"></a>
-	<font color="#ffa520"><b><span dir="ltr"><u>IMPORTANT</u>: Due to a targetted DDoS attack, we have had to move our content to <a href="https://pages.github.com/">github pages</a> (good luck trying to DDoS that, sucker!).
-		However this means that some of the website functionality (e.g. language selection) may not be working properly.<p>We are working on restoring full functionality and appreciate your understanding...</span></b></font></p>
-		<h2 style="border: 4px solid #a09a8a;"><span style="font-size: 133%">Download</span></h2>
-			<p><b>Last updated 2018.09.17:</b></p>
-			<p><ul><li><span style="font-size: 133%"><b><a href="/downloads/rufus-3.3.exe">Rufus 3.3</a></b></span> <span dir="ltr">(1 MB)</span></li>
-			<li><a href="/downloads/rufus-3.3p.exe">Rufus 3.3 Portable</a> <span dir="ltr">(1 MB)</span></li>
-			<li><a href="/downloads/">Other versions</a></li>
+		<p>আপনার যা দরকার সবই Rufus সরবরাহ করে যদিও এটার আয়তন কম!</p>
+		<p>ওহ, এবং Rufus <b>দ্রুত</b>. যেমন এটা দ্বিগুন গতিসম্পন্ন <a href="http://unetbootin.sourceforge.net/">UNetbootin</a>, <a href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3">Universal USB Installer</a> বা <a href="https://www.microsoft.com/en-us/download/windows-usb-dvd-download-tool">Windows 7 USB download tool</a>, ISO ফাইল থেকে উইন্ডোজ ৭ ইউএসবি ড্রাইভ তৈরির সময়। <a href="#ref1"><sup>(1)</sup></a><br/>
+		এই পৃষ্ঠার নীচের অংশে Rufus সমর্থিত ISO গুলির একটি অসম্পূর্ণ তালিকাও দেয়া আছে। <a href="#ref2"><sup>(2)</sup></a></p>
+				<a name="download"></a>
+		<h2 style="border: 4px solid #a09a8a;"><span style="font-size: 133%">ডাউনলোড</span></h2>
+			<p><b>সর্বশেষ আপডেট হয়েছে 2018.09.17:</b></p>
+			<p><ul><li><span style="font-size: 133%"><b><a href="/downloads/rufus-3.3.exe">Rufus 3.3</a></b></span> <span dir="ltr">(1 মেগাবাইট)</span></li>
+			<li><a href="/downloads/rufus-3.3p.exe">Rufus 3.3 বহনযোগ্য</a> <span dir="ltr">(1 মেগাবাইট)</span></li>
+			<li><a href="/downloads/">অন্য সংস্করণ</a></li>
 			</ul></p>
-		<h4>Supported Languages:</h4>
+		<h4>সমর্থিত ভাষা:</h4>
 		<p><table dir="ltr" cellspacing="0" cellpadding="0" border="0"><tr>
 			<td><i>Azərbaycanca</i></td><td>,&nbsp;</td>
 			<td><i>Bahasa Indonesia</i></td><td>,&nbsp;</td>
@@ -288,35 +288,35 @@
 			<td>العربية</td><td>,&nbsp;</td>
 			<td>فارسی</td><td>.</td>
 		</tr></table></p>
-		<h4>System Requirements:</h4>
-		<p>Windows 7 or later, 32 or 64 bit doesn't matter. Once downloaded, the application is ready to use.</p>
-		<p>I will take this opportunity to express my gratitude to the translators who made it possible for Rufus, as well as this webpage, to be translated in various languages. If you find that you can use Rufus in your own language, you should really thank them!</p>
-		<h2>Usage</h2>
-		<p>Download the executable and run it &ndash; no installation is necessary.</p>
-		<p>The executable is digitally signed and the signature should state:			<ul><li><i>"Akeo Consulting"</i> (v1.3.0 or later)</li>
-			<li><i>"Pete Batard - Open Source Developer"</i> (v1.2.0 or earlier)</li></ul></p>
-		<h4>Notes on DOS support:</h4>
-		<p>If you create a DOS bootable drive and use a non-US keyboard, Rufus will attempt to select a keyboard layout according to the locale of your system. In that case, <a href="http://www.freedos.org">FreeDOS</a>, which is the default selection, is recommended over MS-DOS, as it supports more keyboard layouts.</p>
-		<h4>Notes on ISO Support:</h4>
-		<p>All versions of Rufus since v1.1.0 allow the creation of a bootable USB from an <a href="http://en.wikipedia.org/wiki/ISO_image">ISO image</a> (.iso).</p>
-		<p>Creating an ISO image from a physical disc or from a set of files is very easy to do however, through the use of a CD burning application, such as the freely available <a href="http://cdburnerxp.se/">CDBurnerXP</a> or <a href="http://www.imgburn.com/">ImgBurn</a>.</p>
+		<h4>সিস্টেম লাগবে:</h4>
+		<p>উইন্ডোজ 7 বা তার পরবর্তী ভার্সন, ৩২ বা ৬৪ বিট কোন ব্যপার না। একবার ডাউনলোড হয়ে গেলে, এই প্রোগ্রাম ব্যবহারের জন্য তৈরি।</p>
+		<p>আমি অনুবাদকদেরকে কৃতজ্ঞতা জানাতে চাই যারা Rufus এবং এর ওয়েবপেজের জন্য বিভিন্ন ভাষায় অনুবাদ সম্ভব করেছেন । আপনি যদি আপনার ভাষায় Rufus ব্যবহার করতে পারেন, আপনার সত্যিই উচিত তাদের ধন্যবাদ জানানো ।</p>
+		<h2>ব্যবহার</h2>
+		<p>এক্সিকিউটেবল ফাইল ডাউনলোড করুন এবং চালান &ndash; সংস্থাপন করার দরকার নেই।</p>
+		<p>এই এক্সিকিউটেবলটি ডিজিটালভাবে স্বাক্ষরকৃত এবং স্বাক্ষরের অবস্থা:			<ul><li><i>"Akeo Consulting"</i> (সংস্করণ ১.৩.০ বা পরবর্তী)</li>
+			<li><i>"Pete Batard - Open Source Developer"</i> (সংস্করণ ১.২.০ বা আগের)</li></ul></p>
+		<h4>DOS সমর্থনের নোট:</h4>
+		<p>আপনি যদি US কীবোর্ড বাদে অন্য কীবোর্ড ব্যবহার করে DOS বুটেবল ড্রইভ তৈরি করেন, আপনার সিস্টেমের ভাষা অনুযায়ী Rufus একটা কীবোর্ড লেআঊট নির্বাচন করে নিবে, <a href="http://www.freedos.org">মুক্ত DOS</a>, যেটা পুর্বনির্ধারিত নির্বাচন, MS-DOS এর জন্য সুপারিশকৃত, যেন অধিক কীবোর্ড লেআঊট সমর্থন করতে পারে।</p>
+		<h4>ISO সমর্থনের নোট:</h4>
+		<p>সংস্করণ ১.১.০ থেকে শুরু করে Rufus এর সকল সংস্করণই বুটেবল USB তৈরি করতে দেয় <a href="http://en.wikipedia.org/wiki/ISO_image">ISO ইমেজ</a> (.iso).</p>
+		<p>যাইহোক, বাস্তব ডিস্ক বা ফাইল থেকে ISO ইমেজ তৈরি করা খুবই সহজ, একটি CD বার্ণিং সফটওয়্যার ব্যবহার করে, যেগুলো ফ্রিতে সহজলভ্য <a href="http://cdburnerxp.se/">CDBurnerXP</a> বা <a href="http://www.imgburn.com/">ImgBurn</a>.</p>
 		<a name="FAQ"></a>
-		<h2>Frequently Asked Questions (FAQ)</h2>
-		<p>A Rufus FAQ is available <b><a href="https://github.com/pbatard/rufus/wiki/FAQ">HERE</a></b>.<br/></p>
-		<p>To provide feedback, report a bug or request an enhancement, please use the github <a href="https://github.com/pbatard/rufus/issues">issue tracker</a>. Or you can <a href="mailto:pete@akeo.ie?subject=Rufus">send an e-mail</a>.</p>
+		<h2>সচারচর জিজ্ঞাসিত প্রশ্ন(সজিপ্র)</h2>
+		<p>Rufus সজিপ্র পাওয়া যাবে <b><a href="https://github.com/pbatard/rufus/wiki/FAQ">এখানে</a></b>.<br/></p>
+		<p>প্রতিক্রিয়া জানাতে চাইলে বাগ রিপোর্ট করুন বা আরো উন্নয়নের অনুরোধ করুন। গিটহাবে <a href="https://github.com/pbatard/rufus/issues">ইস্যু ট্র্য।কার</a> ব্যবহার করুন বা আপনি চাইলে <a href="mailto:pete@akeo.ie?subject=Rufus">একটি ইমেইল পাঠাতে পারেন</a></p>
 		<a name="license"></a>
-		<h2>License</h2>
-		<p><a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License (GPL) version 3</a> or later.<br />You are free to distribute, modify or even sell the software, insofar as you respect the GPLv3 license.</p>
-		<p>Rufus is produced in a 100% transparent manner, from its <a href="https://github.com/pbatard/rufus">public source</a>, using a <a href="http://www.mingw.org">MinGW32</a> environment.</p>
+		<h2>অনুমতি</h2>
+		<p><a href="http://www.gnu.org/licenses/gpl.html">GNU সাধারন পাবলিক লাইসেন্স (GPL) সংস্করণ ৩</a> বা এর পরবর্তী ।<br />আপনার জন্য এটা উন্মুক্ত যে, আপনি এটা বিতরণ, সংশোধন এমনকি বিক্রিও করতে পারেন, যতটা আপনি GPLv3 লাইসেন্সকে শ্রদ্ধা করেন।</p>
+		<p>Rufus তৈরি হয়েছে ১০০% স্বচ্ছভাবে, এটার <a href="https://github.com/pbatard/rufus">পাবলিক উৎস</a>, <a href="http://www.mingw.org">MinGW32</a> পরিবেশ ব্যবহার করে।</p>
 		<a name="changelog"></a>
-		<h2>Changelog</h2>
+		<h2>পরিবর্তন তালিকা</h2>
 		<ul dir="ltr">
-			<li><b>Version 3.3</b> (2018.09.17) [BUGFIX RELEASE]<ul>
+			<li><b>সংস্করণ 3.3</b> (2018.09.17) [BUGFIX RELEASE]<ul>
 				<li><span dir="ltr">Fix a regression when processing uncompressed bootable DD images</span></li>
 				<li><span dir="ltr">Fix Windows To Go drive creation for ARM64 Windows ISOs</span></li>
 			</ul></li>
 						<br />
-			<li><b>Version 3.2</b> (2018.09.11)<ul>
+			<li><b>সংস্করণ 3.2</b> (2018.09.11)<ul>
 				<li><span dir="ltr">Add RSA-2048 signature validation on all the server downloads</span></li>
 				<li><span dir="ltr">Add "Fast zeroing" cheat mode (courtesy of <b>René van der Zee</b>)</span></li>
 				<li><span dir="ltr">Add support for XP/Server 2003 x64 ISOs (courtesy of <b>Mattiwatti</b>)</span></li>
@@ -327,26 +327,24 @@
 				<li><span dir="ltr">Fix an issue where FAT32 could still be selected for ISOs containing a >4GB file</span></li>
 			</ul></li>
 						<p><font color="#ffa520"><b><span dir="ltr">NOTE: THIS VERSION IS <u>NOT</u> COMPATIBLE WITH <i>WINDOWS XP</i> OR <i>WINDOWS VISTA</i>.</span></b></font></p>
-			<li><b><a href="https://github.com/pbatard/rufus/blob/master/ChangeLog.txt">Other versions</a></b></li>
+			<li><b><a href="https://github.com/pbatard/rufus/blob/master/ChangeLog.txt">অন্য সংস্করণ</a></b></li>
 		</ul>
 		
-		<h2>Source Code</h2>
-			<p><ul><li><a href="https://github.com/pbatard/rufus/archive/v3.3.zip">Rufus 3.3</a> <span dir="ltr">(2.8 MB)</span></li>
-			<li>Alternatively, you can clone the <a href="http://git-scm.com">git</a> repository using:			<pre dir="ltr">$ git clone git://github.com/pbatard/rufus</pre></li>
-			<li>For more information, see the <a href="https://github.com/pbatard/rufus">github project</a>.</li></ul>
-			If you are a developer, you are very much encouraged to tinker with Rufus and submit patches.</p>
+		<h2>উৎস কোড</h2>
+			<p><ul><li><a href="https://github.com/pbatard/rufus/archive/v3.3.zip">Rufus 3.3</a> <span dir="ltr">(2.8 মেগাবাইট)</span></li>
+			<li>অন্যথ্যায়, আপনি চাইলে <a href="http://git-scm.com">গিট</a> রিপোজটোরি ব্যবহার করে এটাকে ক্লোন করতে পারেন:			<pre dir="ltr">$ git clone git://github.com/pbatard/rufus</pre></li>
+			<li>বিস্তারিত তথ্যের জন্য <a href="https://github.com/pbatard/rufus">গিটহাব প্রজেক্ট</a> দেখুন।</li></ul>
+			আপনি যদি ডেভেলপার হোন, আপনাকে অধিক উৎসাহ দেয়া হচ্ছে Rufus এর সাথে সংশোধনে অংশ নেয়া ও প্যাচ জমা দেয়ায়।</p>
 		<a name="donate"></a>
-		<h2>Donations</h2>
-			<p>Since I'm getting asked about this on regular basis, there is <b>no</b> donation button on this page.</p>
-			<p>The main reason is that I feel that the donation system doesn't actually help software development and worse, can be guilt-inducing for users who choose not to donate.</p>
-			<p>Instead, I think that <span lang="fr"><i>"<a href="https://en.wiktionary.org/wiki/m%C3%A9c%C3%A9nat">mécénat</a>"</i></span>; or developer patronage, from <b>companies</b> which benefit most from a healthy <a href="http://en.wikipedia.org/wiki/Free_and_open_source_software">FLOSS</a> ecosystem, is what we should be aiming for. This is because, unless they are backed by a company, developers who want to provide quality Open Source software cannot realistically sustain full time development, no matter how generous their software users are.</p>
-			<p>Also, unless you are <a href="http://winhelp2002.mvps.org/hosts.htm">blocking them</a> (hint, hint), you'll notice that there are ads on this page, which I consider sufficient revenue enough.</p>
-			<p>Finally the fact that I have the freedom to develop <a href="http://en.wikipedia.org/wiki/Free_software">Free Software</a> in my spare time should indicate that I'm well-off enough, and therefore that you should direct your generosity towards people who need it a lot more than I do. If you really insist, you can always make a donation to the <a href="http://www.fsf.org/">Free Software Foundation</a>, as they are the main reason software like Rufus is possible.</p>
-			<p>At any rate, I'll take this opportunity to say <i><u>thank you</u></i> for your continuing support and enthusiasm about this little program: it is much appreciated!</p>
-			<p>But please continue to feel free to use Rufus without any guilt about not contributing for it financially &ndash; you should never have to!</p> 
+		<h2>দানসমূহ</h2>
+			<p>যেহেতু আমি প্রায়ই এ সম্পর্কে জিজ্ঞাসিত হচ্ছি, কিন্তু <b>কোন</b> দান করার বাটন খুজেঁ পাচ্ছি না ।</p>
+			<p>আসল কারণ হচ্ছে, আমি মনে করি দান পদ্ধতি সত্যিকার অর্থে সফটওয়্যার উন্নয়নে সাহায্য করে না এবং এটা আরো খারাপ, কলুষিত করতে পারে তাদেরসহ যারা দান করতে চায় না।</p>
+			<p>আপনি সত্যিই যদি জোর করেন, আপনি চাইলে সর্বদাই <a href="http://www.fsf.org/">ফ্রি সফটওয়্যর ফাউন্ডেশন</a> দান করতে পারেন, যার জন্যই Rufus এর মত সফটওয়্যর সম্ভব হয়েছে।</p>
+			<p>যেকোনভাবে, আমি এটা বলার সুযোগটা নেব <i><u>ধন্যবাদ তোমাকে</u></i> এই ছোট প্রোগ্রামটির ক্রমাগত সমর্থন ও উদ্যমের জন্য: এটাই প্রশংসাযোগ্য!</p>
+			<p>কিন্তু Rufus নিসঙ্কোচে ব্যবহার করতে থাকুন এটাতে কোন প্রকার আর্থিক অবদান রাখা ছাড়া &ndash; আপনাকে কখনোই এটা করতে হবে না!</p> 
 		<a name="ref1">&nbsp;</a>
-		<h2>(1) Speed comparison between Rufus and other applications</h2>
-		<p>The following tests were carried out on a Windows 7 x64 Core 2 duo/4 GB RAM platform, with an USB 3.0 controller and a <a href="http://www.adata-group.com/index.php?action=product_feature&cid=1&piid=145&lan=en">16 GB USB 3.0 ADATA S102 flash drive</a>.</p>
+		<h2>(1) Rufus ও অন্য অ্যাপ্লিকেশনের মধ্যে গতির তুলনা</h2>
+		<p>নিচের টেস্টটা করা হয়েছে উইন্ডোজ ৭ এক্স৬৪ কোর ২ ডুয়ো/৪জিবি র্যাম প্লাটফর্মে, USB ৩.০ নিয়ন্ত্রক এবং একটি <a href="http://www.adata-group.com/index.php?action=product_feature&cid=1&piid=145&lan=en">১৬ জিবি USB ৩.০ ADATA S102 ফ্লাশ ড্রাইভে</a>.</p>
 		<p><table dir="ltr" cellspacing="0" cellpadding="0" border="0"><tr><td>&bull;&nbsp;</td><td>Windows 7 x64</td><td>:&nbsp;</td><td><i>en_windows_7_ultimate_with_sp1_x64_dvd_618240.iso</i></td></tr></table><br/>
 		<table class="reference" style="width:70%">
 		<tr><td width="80%">Windows 7 USB/DVD Download Tool v1.0.30</td><td>00:08:10</td></tr>
@@ -371,7 +369,7 @@
 		<tr><td><b>Rufus v1.1.1</b></td><td><b>00:20:15</b></td></tr>
 		</table></p>
 		<a name="ref2">&nbsp;</a>
-		<h2>(2) Non exhaustive list of ISOs Rufus is known to work with</h2>
+		<h2>(2) অসমগ্র তালিকা যেটার সাথে Rufus কাজ করে বলা যায়</h2>
 		<table dir="ltr" cellspacing="0" cellpadding="0" border="0"><tr>
 			<td><a href="http://www.archlinux.org/">Arch&nbsp;Linux</a></td><td>,&nbsp;</td>
 			<td><a href="http://archbang.org/">Archbang</a></td><td>,&nbsp;</td>
@@ -424,8 +422,8 @@
 		</tr></table></p>
 		<div class="footer"><table align="center" dir="ltr" cellspacing="0" cellpadding="0" border="0"><tr>
 			<td>Copyright&nbsp;</td><td>©&nbsp;</td><td>2011-2018&nbsp;</td><td><a href="https://pete.akeo.ie">Pete&nbsp;Batard</a></td></tr></table>
-			USB icon by PC Unleashed<br/>
-			Hosting by <a href="https://pages.github.com/">GitHub</a>
+			বাংলা অনুবাদকারী ‪<a href="mailto:abdullahbd333@gmail.com?Subject=Rufus%20Homepage%20translation">MD ABDULLAH</a><br/>			USB আইকন সৌজন্যে PC Unleashed<br/>
+			হোস্টিং সৌজন্যে <a href="https://pages.github.com/">GitHub</a>
 			</div>
 		</div>
 	</div>
