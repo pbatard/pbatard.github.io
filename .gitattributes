@@ -1,4 +1,5 @@
 *.html          eol=lf
+*.sh            elo=lf
 .gitattributes  export-ignore
 .gitignore      export-ignore
 
