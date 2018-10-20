@@ -1,6 +1,6 @@
 version = 3.3.1400
 platform_min = 6.1
-download_url = https://rufus.ie/downloads/rufus-3.3.exe
+download_url = https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3.exe
 release_notes = {\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1024{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil\fcharset0 Arial Unicode MS;}{\f2\fnil\fcharset2 Symbol;}}
 {\*\generator Riched20 6.3.9600}\viewkind4\uc1 
 
