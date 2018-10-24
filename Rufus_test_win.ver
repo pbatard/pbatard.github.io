@@ -1,4 +1,4 @@
-version = 3.4.9999
+version = 3.3.9999
 platform_min = 6.0
 download_url = https://github.com/pbatard/rufus/releases/download/testing/rufus-3.4_TEST1.exe
 release_notes = {\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1024{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil\fcharset0 @Arial Unicode MS;}{\f2\fnil\fcharset2 Symbol;}}

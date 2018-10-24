@@ -1,6 +1,8 @@
 version = 3.3.1400
 platform_min = 6.1
 download_url = https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3.exe
+download_url_arm = https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3_arm.exe
+download_url_arm64 = https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3_arm64.exe
 release_notes = {\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1024{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil\fcharset0 Arial Unicode MS;}{\f2\fnil\fcharset2 Symbol;}}
 {\*\generator Riched20 6.3.9600}\viewkind4\uc1 
 
@@ -20,7 +22,7 @@ release_notes = {\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1024{\fonttbl{\f0\fn
 {\pntext\f2\'B7\tab}Add support for XP/Server 2003 x64 ISOs (courtesy of \b Mattiwatti\b0)\par
 {\pntext\f2\'B7\tab}Improve ISO extraction performance by preallocating files (courtesy of \b Mattiwatti\b0)\par
 {\pntext\f2\'B7\tab}Improve bad blocks check algorithm (from suggestions by \b AL.Skywalker\b0)\par
-{\pntext\f2\'B7\tab}Fix progress not being displayed for Sylinux or GRUB downloads\par
+{\pntext\f2\'B7\tab}Fix progress not being displayed for Syslinux or GRUB downloads\par
 {\pntext\f2\'B7\tab}Fix unwanted application close when cancelling an image scan\par
 {\pntext\f2\'B7\tab}Fix an issue where FAT32 could still be selected for ISOs containing a >4GB file\par
 
