@@ -1,6 +1,6 @@
 version = 3.4.1426
 platform_min = 6.1
-download_url = https://github.com/pbatard/rufus/releases/download/untagged-9f1a3746545ceba2735f/rufus-3.4_BETA.exe
+download_url = https://github.com/pbatard/rufus/releases/download/v3.4_BETA/rufus-3.4_BETA.exe
 release_notes = {\rtf1\fbidis\ansi\ansicpg1252\deff0\deflang1024{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil\fcharset0 Arial Unicode MS;}{\f2\fnil\fcharset2 Symbol;}}
 {\*\generator Riched20 6.3.9600}\viewkind4\uc1
 
