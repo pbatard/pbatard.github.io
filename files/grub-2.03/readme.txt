@@ -1,6 +1,6 @@
-core.img was created from the latest git source on 2018.06.12 from
+core.img was created from the latest git source on 2018.11.22 from
   git://git.savannah.gnu.org/grub.git
-on a Debian Stretch x64 system using the commands:
+on a Debian 9.6 x64 system using the commands:
   ./autogen.sh
   # --enable-boot-time for Manjaro Linux
   ./configure --disable-nls --enable-boot-time
