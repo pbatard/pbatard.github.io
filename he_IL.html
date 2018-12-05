@@ -71,7 +71,7 @@
 	.tagline { font-size: 1.6em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
 	.download { float: right; }
 	pre { background: #000; color: #fff; padding: 15px;}
-	code { display:inline-block; padding:3px 3px 2px 1px; color:#555; background-color:#ececec; font-family:monospace, monospace; line-height:10px; font-size:15px; vertical-align:middle; }
+	code { display:inline-block; padding:3px 3px 4px 1px; color:#ececec; font-family:monospace, monospace; line-height:10px; font-size:16px; vertical-align:middle; }
 	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 	.kbd{
 		display:inline-block;
@@ -243,9 +243,9 @@
 		רשימה לא מקיפה של קובצי ISO הנתמכים ע״י Rufus נמצאת בתחתית העמוד הזה. <a href="#ref2"><sup>(2)</sup></a></p>
 				<a name="download"></a>
 		<h2 style="border: 4px solid #a09a8a;"><span style="font-size: 133%">הורדה</span></h2>
-			<p><b>תאריך עדכון אחרון 2018.09.17:</b></p>
-			<p><ul><li><span style="font-size: 133%"><b><a href="https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3.exe"><span dir="ltr">3.3 Rufus</span></a></b></span> <span dir="rtl">(1 מ״ב)</span></li>
-			<li><a href="https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3p.exe"><span dir="ltr">3.3 Rufus</span> נייד</a> <span dir="rtl">(1 מ״ב)</span></li>
+			<p><b>תאריך עדכון אחרון 2018.12.05:</b></p>
+			<p><ul><li><span style="font-size: 133%"><b><a href="https://github.com/pbatard/rufus/releases/download/v3.4/rufus-3.4.exe"><span dir="ltr">3.4 Rufus</span></a></b></span> <span dir="rtl">(1 מ״ב)</span></li>
+			<li><a href="https://github.com/pbatard/rufus/releases/download/v3.4/rufus-3.4p.exe"><span dir="ltr">3.4 Rufus</span> נייד</a> <span dir="rtl">(1 מ״ב)</span></li>
 			<li><a href="/downloads/">גרסאות אחרות</a></li>
 			</ul></p>
 		<h4>שפות נתמכות:</h4>
@@ -317,27 +317,22 @@
 		<a name="changelog"></a>
 		<h2>הערות שחרור</h2>
 		<ul dir="rtl">
-			<li><span dir="ltr">[BUGFIX RELEASE] (2018.09.17) <b>3.3 גרסה</b></span><ul>
-				<li><span dir="ltr">Fix a regression when processing uncompressed bootable DD images</span></li>
-				<li><span dir="ltr">Fix Windows To Go drive creation for ARM64 Windows ISOs</span></li>
-			</ul></li>
-						<br />
-			<li><span dir="ltr">(2018.09.11) <b>3.2 גרסה</b></span><ul>
-				<li><span dir="ltr">Add RSA-2048 signature validation on all the server downloads</span></li>
-				<li><span dir="ltr">Add "Fast zeroing" cheat mode (courtesy of <b>René van der Zee</b>)</span></li>
-				<li><span dir="ltr">Add support for XP/Server 2003 x64 ISOs (courtesy of <b>Mattiwatti</b>)</span></li>
-				<li><span dir="ltr">Improve ISO extraction performance by preallocating files (courtesy of <b>Mattiwatti</b>)</span></li>
-				<li><span dir="ltr">Improve bad blocks check algorithm (from suggestions by <b>AL.Skywalker</b>)</span></li>
-				<li><span dir="ltr">Fix progress not being displayed for Syslinux or GRUB downloads</span></li>
-				<li><span dir="ltr">Fix unwanted application close when cancelling an image scan</span></li>
-				<li><span dir="ltr">Fix an issue where FAT32 could still be selected for ISOs containing a >4GB file</span></li>
+			<li><span dir="ltr">(2018.12.05) <b>3.4 גרסה</b></span><ul>
+				<li><span dir="ltr">Set the default image selection directory to <code>Downloads\</code> instead of <code>My Documents\</code></span></li>
+				<li><span dir="ltr">Add ARM/ARM64 automatic update support</span></li>
+				<li><span dir="ltr">Improve <a href="https://github.com/pbatard/uefi-ntfs">UEFI:NTFS</a> compatibility</span></li>
+				<li><span dir="ltr">Improve access issues by using <a href="https://docs.microsoft.com/en-us/windows/desktop/vds/about-vds">VDS</a> to delete all partitions</span></li>
+				<li><span dir="ltr">Update the <code>.appx</code> to include all architectures as well as request elevation</span></li>
+				<li><span dir="ltr">Fix broken detection of some EFI based images</span></li>
+				<li><span dir="ltr">Fix broken update check due to server switch</span></li>
+				<li><span dir="ltr">UI and accessibility fixes and improvements</span></li>
 			</ul></li>
 						<p><font color="#ffa520"><b><span dir="ltr">NOTE: THIS VERSION IS <u>NOT</u> COMPATIBLE WITH <i>WINDOWS XP</i> OR <i>WINDOWS VISTA</i>.</span></b></font></p>
 			<li><b><a href="https://github.com/pbatard/rufus/blob/master/ChangeLog.txt">גרסאות אחרות</a></b></li>
 		</ul>
 		
 		<h2>קוד מקור</h2>
-			<p><ul><li><a href="https://github.com/pbatard/rufus/archive/v3.3.zip"><span dir="ltr">3.3 Rufus</span></a> <span dir="rtl">(2.8 מ״ב)</span></li>
+			<p><ul><li><a href="https://github.com/pbatard/rufus/archive/v3.4.zip"><span dir="ltr">3.4 Rufus</span></a> <span dir="rtl">(2.8 מ״ב)</span></li>
 			<li>לחלופין, ניתן לשכפל את מאגר ה־<a href="http://git-scm.com">git</a> באמצעות:			<pre dir="ltr">$ git clone git://github.com/pbatard/rufus</pre></li>
 			<li>למידע נוסף, ניתן לראות את הפרוייקט ב־<a href="https://github.com/pbatard/rufus">github</a>.</li></ul>
 			אם אתה מפתח תוכנה, אני מעודד אותך להתעסק עם Rufus ולהגיש טלאים.</p>

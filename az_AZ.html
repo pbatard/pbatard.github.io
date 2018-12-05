@@ -71,7 +71,7 @@
 	.tagline { font-size: 1.6em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
 	.download { float: right; }
 	pre { background: #000; color: #fff; padding: 15px;}
-	code { display:inline-block; padding:3px 3px 2px 1px; color:#555; background-color:#ececec; font-family:monospace, monospace; line-height:10px; font-size:15px; vertical-align:middle; }
+	code { display:inline-block; padding:3px 3px 4px 1px; color:#ececec; font-family:monospace, monospace; line-height:10px; font-size:16px; vertical-align:middle; }
 	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 	.kbd{
 		display:inline-block;
@@ -243,9 +243,9 @@
 		Rufus'un dəstəklədiyi İSO'ların ətraflı olmayan siyahısına səhifənin alt hissəsindən baxa bilərsiniz. <a href="#ref2"><sup>(2)</sup></a></p>
 				<a name="download"></a>
 		<h2 style="border: 4px solid #a09a8a;"><span style="font-size: 133%">Yüklə</span></h2>
-			<p><b>Son yeniləmə 2018.09.17:</b></p>
-			<p><ul><li><span style="font-size: 133%"><b><a href="https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3.exe">Rufus 3.3</a></b></span> <span dir="ltr">(1 MB)</span></li>
-			<li><a href="https://github.com/pbatard/rufus/releases/download/v3.3/rufus-3.3p.exe">Rufus 3.3 Portable</a> <span dir="ltr">(1 MB)</span></li>
+			<p><b>Son yeniləmə 2018.12.05:</b></p>
+			<p><ul><li><span style="font-size: 133%"><b><a href="https://github.com/pbatard/rufus/releases/download/v3.4/rufus-3.4.exe">Rufus 3.4</a></b></span> <span dir="ltr">(1 MB)</span></li>
+			<li><a href="https://github.com/pbatard/rufus/releases/download/v3.4/rufus-3.4p.exe">Rufus 3.4 Portable</a> <span dir="ltr">(1 MB)</span></li>
 			<li><a href="/downloads/">Digər versiyalar</a></li>
 			</ul></p>
 		<h4>Dəstəklənən Dillər:</h4>
@@ -317,27 +317,22 @@
 		<a name="changelog"></a>
 		<h2>Versiya Keçmişi</h2>
 		<ul dir="ltr">
-			<li><b>Versiya 3.3</b> (2018.09.17) [BUGFIX RELEASE]<ul>
-				<li><span dir="ltr">Fix a regression when processing uncompressed bootable DD images</span></li>
-				<li><span dir="ltr">Fix Windows To Go drive creation for ARM64 Windows ISOs</span></li>
-			</ul></li>
-						<br />
-			<li><b>Versiya 3.2</b> (2018.09.11)<ul>
-				<li><span dir="ltr">Add RSA-2048 signature validation on all the server downloads</span></li>
-				<li><span dir="ltr">Add "Fast zeroing" cheat mode (courtesy of <b>René van der Zee</b>)</span></li>
-				<li><span dir="ltr">Add support for XP/Server 2003 x64 ISOs (courtesy of <b>Mattiwatti</b>)</span></li>
-				<li><span dir="ltr">Improve ISO extraction performance by preallocating files (courtesy of <b>Mattiwatti</b>)</span></li>
-				<li><span dir="ltr">Improve bad blocks check algorithm (from suggestions by <b>AL.Skywalker</b>)</span></li>
-				<li><span dir="ltr">Fix progress not being displayed for Syslinux or GRUB downloads</span></li>
-				<li><span dir="ltr">Fix unwanted application close when cancelling an image scan</span></li>
-				<li><span dir="ltr">Fix an issue where FAT32 could still be selected for ISOs containing a >4GB file</span></li>
+			<li><b>Versiya 3.4</b> (2018.12.05)<ul>
+				<li><span dir="ltr">Set the default image selection directory to <code>Downloads\</code> instead of <code>My Documents\</code></span></li>
+				<li><span dir="ltr">Add ARM/ARM64 automatic update support</span></li>
+				<li><span dir="ltr">Improve <a href="https://github.com/pbatard/uefi-ntfs">UEFI:NTFS</a> compatibility</span></li>
+				<li><span dir="ltr">Improve access issues by using <a href="https://docs.microsoft.com/en-us/windows/desktop/vds/about-vds">VDS</a> to delete all partitions</span></li>
+				<li><span dir="ltr">Update the <code>.appx</code> to include all architectures as well as request elevation</span></li>
+				<li><span dir="ltr">Fix broken detection of some EFI based images</span></li>
+				<li><span dir="ltr">Fix broken update check due to server switch</span></li>
+				<li><span dir="ltr">UI and accessibility fixes and improvements</span></li>
 			</ul></li>
 						<p><font color="#ffa520"><b><span dir="ltr">NOTE: THIS VERSION IS <u>NOT</u> COMPATIBLE WITH <i>WINDOWS XP</i> OR <i>WINDOWS VISTA</i>.</span></b></font></p>
 			<li><b><a href="https://github.com/pbatard/rufus/blob/master/ChangeLog.txt">Digər versiyalar</a></b></li>
 		</ul>
 		
 		<h2>Qaynaq Kodu</h2>
-			<p><ul><li><a href="https://github.com/pbatard/rufus/archive/v3.3.zip">Rufus 3.3</a> <span dir="ltr">(2.8 MB)</span></li>
+			<p><ul><li><a href="https://github.com/pbatard/rufus/archive/v3.4.zip">Rufus 3.4</a> <span dir="ltr">(2.8 MB)</span></li>
 			<li>Alternativ olaraq, <a href="http://git-scm.com">get</a> hissəsini istifadə edərək klonlaşdıra bilərsiniz:			<pre dir="ltr">$ git clone git://github.com/pbatard/rufus</pre></li>
 			<li>Daha çox məlumat üçün <a href="https://github.com/pbatard/rufus">github proyektinə</a> baxın.</li></ul>
 			İnkişafa, Rufus'u düzəlişlərə və yamaq təqdim etməyə təşviq edirik.</p>
