@@ -1,6 +1,5 @@
 *.html          eol=lf
-*.sh            eoL=lf
+*.sh            eol=lf
 *.ver           eol=lf
 .gitattributes  export-ignore
 .gitignore      export-ignore
-
