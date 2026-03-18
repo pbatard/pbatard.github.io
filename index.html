@@ -1,78 +1,595 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<div id="navbar-container" align="right">
-<div id="navbar" align="right">
-<font face="Verdana, Arial, Helvetica, sans-serif" size="2">
-<a href="https://akeo.ie">Home</a>
-<a href="https://pete.akeo.ie">Blog</a>
-<a href="mailto:support@akeo.ie">Contact us</a>
-</font>
-</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akeo Consulting</title>
-<style type="text/css">
-body{border:0; margin:0; padding:0;}
-#navbar-container{
-width:940px;
-background:#a0e347;
-}
-#navbar{
-margin:0 auto;
-width:860px;
-line-height:26px;
-}
-#navbar a:link, #navbar a:visited, #navbar a:hover{
-color:#ffffff;
-font-weight:bold;
-margin-right:5px;
-text-decoration:none;
-}
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --white: #f5f5f5;
+    --red: #e01e1e;
+    --red-dim: rgba(224,30,30,0.08);
+    --gray: #888;
+    --border: #1c1c1c;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  /* CURSOR */
+  #cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--red);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+  }
+  #cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(224,30,30,0.45);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s, height 0.25s, opacity 0.2s;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 3rem;
+  }
+
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--red); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-right a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-right a:hover { color: var(--white); }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 3rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* animated left accent line */
+  .hero::before {
+    content: '';
+    position: absolute;
+    left: 3rem; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--red) 40%, transparent);
+    animation: scanLine 5s ease-in-out infinite;
+  }
+
+  @keyframes scanLine {
+    0%   { clip-path: inset(100% 0 0 0); }
+    40%  { clip-path: inset(0 0 0 0); }
+    80%  { clip-path: inset(0 0 100% 0); }
+    100% { clip-path: inset(0 0 100% 0); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.3s;
+  }
+
+  .hero h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(3.5rem, 9vw, 9rem);
+    line-height: 0.93;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    padding-left: 1.5rem;
+    opacity: 0;
+    animation: rise 0.9s ease forwards 0.45s;
+  }
+
+  .hero h1 strong {
+    font-weight: 500;
+    color: var(--red);
+    display: block;
+  }
+
+  .hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    padding-left: 1.5rem;
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.65s;
+  }
+
+  .hero-desc {
+    max-width: 40ch;
+    color: var(--gray);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .hero-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--white);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background 0.25s, color 0.25s;
+  }
+  .hero-cta:hover { background: var(--red); color: var(--white); }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 3rem; right: 3rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 0;
+    animation: rise 0.8s ease forwards 0.9s;
+  }
+  .hero-scroll-hint::after {
+    content: '';
+    width: 36px; height: 1px;
+    background: #444;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MARQUEE */
+  .marquee-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #444;
+    padding: 0 2.5rem;
+    border-right: 1px solid var(--border);
+  }
+  .marquee-item .dot { color: var(--red); margin-right: 0.5rem; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 7rem 3rem;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.63rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  h2.sec-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    letter-spacing: -0.035em;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 3.5rem;
+  }
+
+  h2.sec-title em { font-style: normal; color: var(--red); }
+
+  /* ABOUT GRID */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    gap: 0;
+  }
+
+  .about-card {
+    padding: 3rem;
+    border-right: 1px solid var(--border);
+    position: relative;
+    transition: background 0.3s;
+  }
+  .about-card:last-child { border-right: none; }
+  .about-card:hover { background: rgba(255,255,255,0.02); }
+
+  .about-card::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0; right: 0;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+  }
+  .about-card:hover::after { transform: scaleX(1); }
+
+  .card-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.2rem;
+  }
+
+  .about-card p {
+    color: var(--gray);
+    font-size: 0.93rem;
+    line-height: 1.8;
+  }
+  .about-card p + p { margin-top: 1rem; }
+
+  .about-card a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .about-card a:hover { color: var(--red); border-color: var(--red); }
+
+  /* EXPERTISE */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--border);
+  }
+
+  .exp-item {
+    padding: 1.6rem 1.4rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.87rem;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .exp-item:hover { background: var(--red-dim); color: var(--white); }
+  .exp-item::before {
+    content: '—';
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--red);
+    flex-shrink: 0;
+  }
+
+  /* CLIENTS */
+  .clients-row {
+    display: flex;
+    border: 1px solid var(--border);
+  }
+  .client {
+    flex: 1;
+    padding: 2.2rem 1rem;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    border-right: 1px solid var(--border);
+    transition: background 0.2s, color 0.2s;
+  }
+  .client:last-child { border-right: none; }
+  .client:hover { background: var(--red); color: var(--white); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #444;
+  }
+  .footer-brand span { color: var(--red); }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: #444;
+	text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .footer-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--red); }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    body { cursor: auto; }
+    #cursor, #cursor-ring { display: none; }
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-right a:not(:last-child) { display: none; }
+    .hero { padding: 0 1.5rem 4rem; }
+    .hero::before { left: 1.5rem; }
+    .hero-eyebrow { padding-left: 0; }
+    .hero h1 { padding-left: 0; font-size: clamp(3rem, 14vw, 6rem); }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 2rem; padding-left: 0; }
+    .section { padding: 4.5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .clients-row { flex-wrap: wrap; }
+    .client { min-width: 50%; }
+    footer { flex-direction: column; gap: 1.2rem; text-align: center; padding: 2rem 1.5rem; }
+  }
 </style>
 </head>
-<body text="#616e7f" bgcolor="#fdfdfd" link="#aaaabb" vlink="#888899" alink="#ff0000">
-<table width="940" height="100" border="0" cellpadding="0" cellspacing="0" valign="0">
-<tr>
-<td width="20">&nbsp;</td>
-<td valign=center width="700">
-<div align="center" vspace=3>
-<h2><font face="Verdana, Arial, Helvetica, sans-serif">
-<b><i><font face="Verdana,Arial,Helvetica" color="#000000" size="6">A<font color="#ff0000">k</font>eo Consulting</font></i></b></h2><p>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<nav>
+  <a href="#" class="nav-logo">Akeo<span>.</span></a>
+  <div class="nav-right">
+    <a href="https://pete.akeo.ie" target="_blank">Blog</a>
+    <a href="https://github.com/pbatard?tab=repositories" target="_blank">GitHub</a>
+    <a href="mailto:pete@akeo.ie?subject=Akeo%20Consulting" target="_blank">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">County Donegal, Ireland &nbsp;·&nbsp; Est. 2010</div>
+  <h1>Software<br>built to<br><strong>Matter.</strong></h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      A software development company, with 30+ years of expertise in Open Source, Embedded Systems, Security, and Critical Software Infrastructure.
+    </p>
+    <a href="mailto:pete@akeo.ie?subject=Akeo%20Consulting" target="_blank" class="hero-cta">Get in touch</a>
+  </div>
+  <div class="hero-scroll-hint">Scroll</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="dot">●</span>FLOSS Development</span>
+    <span class="marquee-item"><span class="dot">●</span>UEFI &amp; BIOS</span>
+    <span class="marquee-item"><span class="dot">●</span>Embedded Systems</span>
+    <span class="marquee-item"><span class="dot">●</span>Security</span>
+    <span class="marquee-item"><span class="dot">●</span>Reverse Engineering</span>
+    <span class="marquee-item"><span class="dot">●</span>Open Source</span>
+    <span class="marquee-item"><span class="dot">●</span>ARM64</span>
+    <span class="marquee-item"><span class="dot">●</span>Web Services</span>
+    <span class="marquee-item"><span class="dot">●</span>FLOSS Development</span>
+    <span class="marquee-item"><span class="dot">●</span>UEFI &amp; BIOS</span>
+    <span class="marquee-item"><span class="dot">●</span>Embedded Systems</span>
+    <span class="marquee-item"><span class="dot">●</span>Security</span>
+    <span class="marquee-item"><span class="dot">●</span>Reverse Engineering</span>
+    <span class="marquee-item"><span class="dot">●</span>Open Source</span>
+    <span class="marquee-item"><span class="dot">●</span>ARM64</span>
+    <span class="marquee-item"><span class="dot">●</span>Web Services</span>
+  </div>
 </div>
-</td>
-</tr>
-</table>
-&nbsp;<br>
-<table width="940" height="100" border="0" cellpadding="0" cellspacing="0" valign="0">
-<tr>
-<td width="40"></td>
-<td valign=top width="420">
-<p align="justify">
-<font face="Verdana, Arial, Helvetica, sans-serif" size="2"></b>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#80c327><b>Akeo Consulting</b></font> is a small Software Development company, established in the North-West of Ireland, in the breathtaking wilderness of <a href="https://www.google.com/search?tbm=isch&q=county+donegal+pictures+-map">County Donegal</a>.<br>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our expertise ranges from <a href="https://www.gnu.org/philosophy/floss-and-foss.en.html">FLOSS</a> development (<a href="https://rufus.ie">Rufus</a>, BIOS and <a href="https://github.com/tianocore/edk2/commits/master?author=pbatard">UEFI</a> including <a href="https://github.com/tianocore/edk2-platforms/commits/master?author=pbatard">ARM64 platforms</a> or <a href="https://github.com/pbatard/efifs">file system drivers</a>, <a href="https://github.com/pbatard/libwdi">libwdi/Zadig</a>, <a href="https://libusb.info/">libusb</a>, etc.), Embedded Systems and SoC development, Security, Web Services technologies, Operating Systems, Reverse Engineering and much more!<br>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In our short history we have provided services to well known organizations such as <a href="https://www.adobe.com/">Adobe</a>, <a href="https://www.prudential.com/">Prudential</a>, <a href="https://www.thalesgroup.com/">Thales</a>, <a href="https://www.hsbc.com/">HSBC</a>, <a href="http://www.fsa.gov.uk/">FSA</a>, as well as smaller ones, in order to address some of their mission critical problems, always with an outstanding level of customer satisfaction.</i></b></td>
-<td width="20"></td>
-<td valign=top width="420">
-<p align="justify">
-<font face="Verdana, Arial, Helvetica, sans-serif" size="2"></b>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Firm believers in Open Source, and especially in <a href="https://www.gnu.org/philosophy/free-sw.en.html">Free Software</a>, we are currently using our 30+ years Software Development expertise for the development of various FLOSS projects, such as <a href="https://rufus.akeo.ie">Rufus</a>; a highly regarded Windows application that registers millions of user downloads every month.<br>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On a smaller scale, we are also keen on demonstrating our ability to develop highly innovative solutions to long standing and seemingly insoluble computing problems, through projects/proof of concepts such as <a href="https://github.com/pbatard/ubrx">ubrx</a>, <a href="https://github.com/pbatard/uefi-ntfs">UEFI:NTFS</a> or <a href="https://github.com/pbatard/edk2/commits/ebc-arm5">EBC UEFI support for ARM platforms</a>.<br>&nbsp;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more, please see our long list of <a href="https://github.com/pbatard?tab=repositories">GitHub repositories</a>, <a href="https://pete.akeo.ie">our Blog</a>, or contact us using the link above.<br>&nbsp;<br>
-</p>
-</td>
-<td width="40"></td>
-</tr>
-</table>
-<table width="940" height="60" border="0" cellpadding="0" cellspacing="0" valign="0">
-<tr>
-<td width="940">
-<center>
-<font face="Verdana, Arial, Helvetica, sans-serif" size="1">Copyright © 2010-2024 Akeo Consulting</font>
-</center>
-</td>
-</tr>
-</table>
+
+<!-- ABOUT -->
+<section class="section">
+  <span class="section-label reveal">01 — About</span>
+  <h2 class="sec-title reveal">Taking on challenges<br>others see <em>impossible.</em></h2>
+  <div class="about-grid reveal">
+    <div class="about-card">
+      <div class="card-tag">The Company</div>
+      <p>Akeo Consulting is a small Software Development company established in the North-West of Ireland, in the breathtaking wilderness of <a href="https://www.google.com/search?tbm=isch&q=county+donegal+pictures+-map" target="_blank">County Donegal</a>.</p>
+      <p>Our expertise ranges from <a href="https://www.gnu.org/philosophy/floss-and-foss.en.html" target="_blank">FLOSS</a> development — <a href="https://rufus.ie" target="_blank">Rufus</a>, BIOS and <a href="https://github.com/tianocore/edk2/commits/master?author=pbatard" target="_blank">UEFI</a> including <a href="https://github.com/tianocore/edk2-platforms/commits/master?author=pbatard" target="_blank">ARM64 platforms</a>, <a href="https://github.com/pbatard/efifs" target="_blank">file system drivers</a>, <a href="https://github.com/pbatard/libwdi" target="_blank">libwdi / Zadig</a>, <a href="https://libusb.info/" target="_blank">libusb</a> — to Embedded Systems, Security, and much more.</p>
+    </div>
+    <div class="about-card">
+      <div class="card-tag">Open Source</div>
+      <p>Firm believers in <a href="https://www.gnu.org/philosophy/free-sw.en.html" target="_blank">Free Software</a>, we apply our 30+ years of expertise to FLOSS projects like <a href="https://rufus.ie" target="_blank">Rufus</a> — a widely trusted Windows application with millions of downloads every month.</p>
+      <p>We have also developed innovative solutions for long-standing computing problems: <a href="https://github.com/pbatard/ubrx" target="_blank">ubrx</a>, <a href="https://github.com/pbatard/uefi-ntfs" target="_blank">UEFI:NTFS</a>, <a href="https://github.com/pbatard/Mosby" target="_blank">Mosby</a>. For more, please see our full list of <a href="https://github.com/pbatard?tab=repositories" target="_blank">GitHub repositories</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="section" style="padding-top:0">
+  <span class="section-label reveal">02 — Expertise</span>
+  <h2 class="sec-title reveal">What we<br>work <em>with.</em></h2>
+  <div class="expertise-grid reveal">
+    <div class="exp-item">FLOSS Development</div>
+    <div class="exp-item">UEFI / BIOS</div>
+    <div class="exp-item">ARM64 Platforms</div>
+    <div class="exp-item">Embedded Systems</div>
+    <div class="exp-item">SoC Development</div>
+    <div class="exp-item">File System Drivers</div>
+    <div class="exp-item">USB Drivers</div>
+    <div class="exp-item">Security</div>
+    <div class="exp-item">Reverse Engineering</div>
+    <div class="exp-item">Web Services</div>
+    <div class="exp-item">Operating Systems</div>
+    <div class="exp-item">Open Source</div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section" style="padding-top:0">
+  <span class="section-label reveal">03 — Clients</span>
+  <h2 class="sec-title reveal">Trusted by<br><em>leading</em> organizations.</h2>
+  <div class="clients-row reveal">
+    <div class="client">Adobe</div>
+    <div class="client">Prudential</div>
+    <div class="client">Thales</div>
+    <div class="client">HSBC</div>
+    <div class="client">FSA</div>
+	<div class="client">EDK2</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Akeo<span>.</span></div>
+  <div class="footer-copy">© 2010–2026 Akeo Consulting · Donegal, Ireland<br/>Homepage design by <a href="https://www.instagram.com/bogdicn" target="_blank">rivofxdev</a></div>
+  <div class="footer-links">
+    <a href="https://pete.akeo.ie" target="_blank">Blog</a>
+    <a href="https://github.com/pbatard?tab=repositories" target="_blank">GitHub</a>
+    <a href="mailto:pete@akeo.ie?subject=Akeo%20Consulting" target="_blank">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+  (function tick() {
+    cursor.style.left = mx + 'px';
+    cursor.style.top  = my + 'px';
+    rx += (mx - rx) * 0.14;
+    ry += (my - ry) * 0.14;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(tick);
+  })();
+
+  // Expand ring on link hover
+  document.querySelectorAll('a').forEach(a => {
+    a.addEventListener('mouseenter', () => {
+      cursor.style.width  = '16px';
+      cursor.style.height = '16px';
+      ring.style.width  = '54px';
+      ring.style.height = '54px';
+      ring.style.opacity = '0.4';
+    });
+    a.addEventListener('mouseleave', () => {
+      cursor.style.width  = '10px';
+      cursor.style.height = '10px';
+      ring.style.width  = '36px';
+      ring.style.height = '36px';
+      ring.style.opacity = '1';
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
